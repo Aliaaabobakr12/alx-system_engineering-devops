@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# This script lists the content of the current directory in a list format
+
+for file in *; do
+    if [[ ! "$file" =~ ^\..* && "$file" =~ .*-.* ]]; then
+        name_after_dash="${file#*-}"
+        echo "$name_after_dash"
+    fi
+done
